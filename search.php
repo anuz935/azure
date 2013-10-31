@@ -45,8 +45,8 @@ Company <input type="text" name="company" id="company"/></br>
     try {
         $name = $_POST['name'];
         // Insert data
-        $sql_insert = "select * from registration_tbl where name LIKE CONCAT ('%',?,'%')";
-        $stmt = $conn->prepare($sql_insert);
+        $sql_select = "select * from registration_tbl where name LIKE CONCAT ('%',?,'%')";
+        $stmt = $conn->prepare($sql_select);
         $stmt->bindValue(1, $name);
         $stmt->execute();
  $registrants = $stmt->fetchAll(); 
