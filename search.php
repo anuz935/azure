@@ -45,7 +45,7 @@ Company <input type="text" name="company" id="company"/></br>
     try {
         $name = $_POST['name'];
         // Insert data
-        $sql_insert = "select * from registration_tbl where name=?";
+        $sql_insert = "select * from registration_tbl where name=?%";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->execute();
